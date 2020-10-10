@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </head>
+  <body>
+    <div class="landing">
+      <nav class="animate__animated animate__fadeInDown">
+        <img
+          src="Website Assets/Logo.png"
+          alt="Happy hands logo"
+          tabindex="0"
+        />
+        <a href="https://hacksforhumanity.io" target="blank_"
+          ><img
+            src="Website Assets/Image 1.png"
+            alt="Hacks for Humanity logo"
+            tabindex="1"
+        /></a>
+      </nav>
+      <section class="landingPage">
+        <div class="headings">
+          <h1 tabindex="2" id="greatFamilies">
+            Great families depend on each other.
+          </h1>
+          <h1 tabindex="3" id="farApart">But what if they are far apart?</h1>
+        </div>
+        <div
+          class="landingPageIllustration animate__animated animate__fadeInUp"
+        >
+          <img
+            src="Website Assets/Landing Illustration-02.png"
+            alt="Parents and Kids Image"
+            class="leftIllustration"
+          />
+          <img
+            src="Website Assets/Landing Illustration-01.png"
+            alt="Grandparents Image"
+            class="rightIllustration"
+          />
+        </div>
+        <div class="chevronimage">
+          <img src="Website Assets/chevron.png" alt="chevron down image" />
+        </div>
+      </section>
+    </div>
+    <section class="tasks">
+      <div class="lonelyIllustration wow animate__animated animate__fadeInLeft">
+        <img src="Website Assets/Group 25.png" alt="Alone Illustation" />
+      </div>
+      <div class="taskscontent">
+        <h1 tabindex="4">
+          And they struggle with some tasks that may be simple for others
+        </h1>
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="taskscontent">
+        <h1>And they struggle with some tasks that may be simple for others</h1>
+      </div>
+      <div
+        class="lonelyIllustration wow animate__animated animate__fadeInRight"
+      >
+        <img src="Website Assets/Group 29.png" alt="Homepage image" />
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="lonelyIllustration wow animate__animated animate__fadeInLeft">
+        <img src="Website Assets/Group 30.png" alt="Prototype image" />
+      </div>
+      <div class="taskscontent">
+        <h1>And they struggle with some tasks that may be simple for others</h1>
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="taskscontent">
+        <h1>And they struggle with some tasks that may be simple for others</h1>
+      </div>
+      <div
+        class="lonelyIllustration wow animate__animated animate__fadeInRight"
+      >
+        <img
+          src="Website Assets/Volunteering Illustration_Artboard 1.png"
+          alt="Volunteering Illustation"
+          class="volunteering"
+        />
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="lonelyIllustration wow animate__animated animate__fadeInLeft">
+        <img
+          src="Website Assets/Volunteering Illustration_Artboard 1 copy.png"
+          alt="Volunteering Illustation"
+          class="volunteering"
+        />
+      </div>
+      <div class="taskscontent">
+        <h1>And they struggle with some tasks that may be simple for others</h1>
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="taskscontent">
+        <h1>And they struggle with some tasks that may be simple for others</h1>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="lonelyIllustration wow animate__animated animate__fadeInRight"
+      >
+        <img
+          src="Website Assets/Happy couple.png"
+          alt="Happy couple Illustation"
+        />
+      </div>
+    </section>
+    <script>
+      const controller = new ScrollMagic.Controller();
+      var tl2 = new TimelineMax({ onUpdate: updatePercentage });
+      tl2.to(".chevronimage>img", 0.1, { opacity: 0 });
+      tl2.to("#greatFamilies", 1, { opacity: 0 });
+      tl2.to("#farApart", 1, { opacity: 1 });
+      tl2.to(".landingPageIllustration>img", 1, { scale: 0.4 }, "-=2");
+      tl2.to(".leftIllustration", 1, { x: -80 });
+      tl2.to(".rightIllustration", 1, { x: 80 }, "-=1");
+      const scene = new ScrollMagic.Scene({
+        triggerElement: ".landing",
+        triggerHook: 0,
+        duration: "100%",
+      })
+        .setTween(tl2)
+        .addTo(controller)
+        .setPin(".landing");
+      function updatePercentage() {
+        //percent.innerHTML = (tl.progress() *100 ).toFixed();
+        tl2.progress();
+      }
+    </script>
+  </body>
+</html>
