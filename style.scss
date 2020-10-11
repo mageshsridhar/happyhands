@@ -75,6 +75,14 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+p {
+  margin-top: 1em;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.block {
+  width: 40%;
+}
 .volunteering {
   height: 45em;
   width: auto;
@@ -130,5 +138,13 @@ button {
   }
   button {
     text-align: center;
+  }
+  p {
+    text-align: center;
+    font-size: 13px;
+  }
+  .block {
+    width: 2em;
+    height: 2em;
   }
 }
